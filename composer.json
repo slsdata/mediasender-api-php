@@ -1,0 +1,29 @@
+{
+    "name" : "slsdata/mediasender-api-php",
+    "description": "Official Media-Sender provided API V1 wrapper",
+    "version": "1.0.0",
+    "keywords": ["framework", "http", "rest", "web service", "curl", "client", "HTTP client", "api", "mediasender", "slsdata"],
+    "homepage": "http://github.com/slsdata/mediasender-api-php",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3",
+        "guzzlehttp/guzzle": "~5.0"
+    },
+    "type": "library",
+    "autoload": {
+        "psr-0": { "Mediasender": "src/" }
+    },
+    "authors": [
+        {
+            "name": "Jérémie LEMOINE",
+            "email": "jlemoine@sls-data.com",
+            "homepage": "http://www.sls-data.com/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "tech@sls-data.com",
+        "docs": "https://github.com/slsdata/mediasender-api-php"
+    },
+    "minimum-stability": "dev"
+}
