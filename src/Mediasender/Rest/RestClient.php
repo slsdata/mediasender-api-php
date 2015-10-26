@@ -1,5 +1,5 @@
 <?php
-namespace Slsmedia\Rest;
+namespace Mediasender\Rest;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
