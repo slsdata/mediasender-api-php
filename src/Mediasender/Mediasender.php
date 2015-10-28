@@ -9,7 +9,7 @@ class Mediasender
 {
     protected static $_apiURL = "api.media-sender.com";
     protected static $_apiVersion = "v1";
-    protected static $_apiSSL = false;
+    protected static $_apiSSL = true;
     
     private $_apiEnctype = "json";
     private $_apiUser;
