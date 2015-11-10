@@ -7,15 +7,14 @@ En effet, l'API communique via des requÃªtes HTTP et permet selon les quatre opÃ
 Installation
 ------------
 
-To install the SDK, you will need to be using [Composer](http://getcomposer.org/) 
-in your project. 
-If you aren't using Composer yet, it's really simple! Here's how to install 
-composer and the Mailgun SDK.
+Pour utiliser l'API, vous devez installer [Composer](http://getcomposer.org/) 
+dans votre projet. 
+Si vous n'utilisez pas encore Composer, voici comment l'installer simplement ainsi que la librairie Mediasender.
 
 ```PHP
 # Install Composer
 curl -sS https://getcomposer.org/installer | php
 
 # Add Mailgun as a dependency
-php composer.phar require mailgun/mailgun-php:~1.7.2
+php composer.phar require slsdata/mediasender-api-php:dev-master
 ``` 
