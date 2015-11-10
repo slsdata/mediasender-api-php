@@ -9,7 +9,7 @@ Installation
 
 Pour utiliser l'API, vous devez installer [Composer](http://getcomposer.org/) 
 dans votre projet. 
-Si vous n'utilisez pas encore Composer, voici comment l'installer simplement ainsi que la librairie PHP Mediasender.
+Si vous n'utilisez pas encore Composer, voici comment l'installer simplement ainsi que la librairie PHP MediaSender.
 
 ```PHP
 # Install Composer
@@ -19,8 +19,10 @@ curl -sS https://getcomposer.org/installer | php
 php composer.phar require slsdata/mediasender-api-php:dev-master
 ``` 
 
+Voici le lien direct pour [Packagist](https://packagist.org/packages/slsdata/mediasender-api-php).
+
 Une fois installé, il suffit d'intégrer l'autoloader de Composer dans votre application, qui permettra ainsi de charger
-automatiquement la librairie Mediasender et ses dépendences au sein de votre projet:
+automatiquement la librairie MediaSender et ses dépendences au sein de votre projet:
 ```PHP
 require 'vendor/autoload.php';
 use Mediasender\Mediasender;
@@ -53,4 +55,4 @@ Si vous détectez le moindre problème technique, veuillez décrire ce dernier s
 [MediaSender Issues](https://github.com/slsdata/mediasender-api-php/issues)
 
 Pour toute information supplémentaire, veuillez nous contacter par message électronique sur l'adresse suivante:
-[support@media-sender.com](support@media-sender.com).
+[support@media-sender.com](support@media-sender.com)
