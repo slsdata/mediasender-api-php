@@ -41,3 +41,16 @@ $client = new Mediasender(array(
 $bases = $client->get_bases();
 var_dump(json_decode($bases->http_response_body, false));
 ```
+
+
+Support
+--------------------
+
+N'oublier pas de visiter le site officiel de [l'API MediaSender](http://dev.media-sender.com/v1)
+pour connaître les différentes utilisations possibles.
+
+Si vous détectez le moindre problème technique, veuillez décrire ce dernier sur notre support GitHub. 
+[MediaSender Issues](https://github.com/slsdata/mediasender-api-php/issues)
+
+Pour toute information supplémentaire, veuillez nous contacter par message électronique sur l'adresse suivante:
+[support@media-sender.com](support@media-sender.com).
