@@ -15,7 +15,7 @@ Si vous n'utilisez pas encore Composer, voici comment l'installer simplement ain
 # Install Composer
 curl -sS https://getcomposer.org/installer | php
 
-# Add Mailgun as a dependency
+# Add Mediasender as a dependency
 php composer.phar require slsdata/mediasender-api-php:dev-master
 ``` 
 
@@ -28,10 +28,10 @@ use Mediasender\Mediasender;
 
 Utilisation
 -----
-Here's how to send a message using the SDK:
+Voici comment récupérer la liste de vos bases:
 
 ```php
-# First, instantiate the SDK with your API credentials and define your domain. 
+# First, instantiate the SDK with your API credentials. 
 $client = new Mediasender(array(
     "api_user" => API_USER,
     "api_password" => API_KEY,
