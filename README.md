@@ -47,7 +47,6 @@ $bases = $client->get_bases();
 var_dump(json_decode($bases->http_response_body, false));
 ```
 
-
 Support
 --------------------
 
