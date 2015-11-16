@@ -1,7 +1,7 @@
 MEDIASENDER-PHP
 ===========
 
-L'API MediaSender a été développé pour être conforme aux normes RESTful.
+L'API **MediaSender** a été développé pour être conforme aux normes RESTful.
 En effet, l'API communique via des requêtes HTTP et permet selon les quatre opérations CRUD (Create Read Update Delete) de créer, lire, mettre à jour et supprimer des données.
 
 Installation
