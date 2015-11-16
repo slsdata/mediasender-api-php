@@ -11,7 +11,7 @@ Pour utiliser l'API, vous devez installer [Composer](http://getcomposer.org/)
 dans votre projet. 
 Si vous n'utilisez pas encore Composer, voici comment l'installer simplement ainsi que la librairie PHP MediaSender.
 
-```bash
+```shell
 # Install Composer
 curl -sS https://getcomposer.org/installer | php
 
@@ -32,6 +32,7 @@ Utilisation
 -----
 
 Voici un exemple:
+
 Comment récupérer la liste de vos bases.
 
 ```php
