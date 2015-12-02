@@ -217,6 +217,10 @@ class Mediasender
     
     private function _generateFullURL($apiURL, $apiVersion, $apiSSL)
     {
-        return "https://".$apiURL."/".$apiVersion."/";
+        if(!$apiSSL){
+            return "http://".$apiURL."/".$apiVersion."/";
+        }else{
+            return "https://".$apiURL."/".$apiVersion."/";
+        }
     }
 }
