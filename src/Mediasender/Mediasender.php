@@ -213,6 +213,11 @@ class Mediasender
         }else{
             return 'Hello "'.$this->_apiUser.'", login fail !';
         }
+        if(!$apiSSL){
+            return "http://".$apiURL."/".$apiVersion."/";
+        }else{
+            return "https://".$apiURL."/".$apiVersion."/";
+        }
     }
     
     private function _generateFullURL($apiURL, $apiVersion, $apiSSL)
