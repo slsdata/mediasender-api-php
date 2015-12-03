@@ -26,8 +26,7 @@ class RestClient
                     ]
                 ],
                 'auth' => [$apiUser, $apiKey, 'digest'],
-                'exceptions' => false,
-                'verify' => false
+                'exceptions' => false
             ]
         ]);
     }
