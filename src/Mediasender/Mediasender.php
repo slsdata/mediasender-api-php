@@ -121,6 +121,12 @@ class Mediasender
         return $this->_restClient->post("contact", $postDatas);
     }
     
+    public function addupdate_contact($postDatas = array())
+    {
+        $postDatas["request"] = "insertupdate";
+        return $this->_restClient->post("contact", $postDatas);
+    }
+    
     public function update_contact($id, $putDatas = array())
     {
         return $this->_restClient->put("contact/".$id, $putDatas);
