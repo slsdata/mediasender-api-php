@@ -89,8 +89,12 @@ class RestClient
     private function _errorEncodage()
     {
         $result = new \stdClass();
-        $result->http_response_code = "5.0.0";
-        $result->http_response_bodytst = "Encodage error";
+        $result->http_response_code = 200;
+        $result->http_response_body = $this->_encodePostDatas(array(
+            "status" => "failed",
+            "errorcode" => "5.0.0",
+            "message" => "Error encodage UTF-8"
+        ));
         return $result;
     }
     
