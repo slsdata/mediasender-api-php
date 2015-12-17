@@ -106,30 +106,27 @@ class RestClient
     
     private function _encodePostDatas($datas)
     {
-        if($this->_forceUTF8){
-            $datas = $this->_encodeUTF8($datas);
-        }
+        $datasEncoded = $this->_encodeUTF8($datas);
         
         switch($this->_apiEnctype){
             case "json":
-                $datas = json_encode($datas);
+                $datas = json_encode($datasEncoded);
                 break;
             case "xml":
-                $datas = $this->_array2xml($datas);
+                $datas = $this->_array2xml($datasEncoded);
                 break;
         }
         return $datas;
     }
     
-    private function _encodeUTF8($datas)
+    private function _encodeUTF8($array)
     {
-        array_walk_recursive($datas, function(&$item){
-            if(!mb_detect_encoding($item, 'UTF-8', true)){
-                $item = "";
-                //$item = Encoding::fixUTF8($item);
+        array_walk_recursive($array, function(&$item, $key){
+            if(!mb_detect_encoding($item, 'utf-8', true)){
+                $item = utf8_encode($item);
             }
         });
-        return $datas;
+        return $array;
     }
     
     private function _array2xml($array)
