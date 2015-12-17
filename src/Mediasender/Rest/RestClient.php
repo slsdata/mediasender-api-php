@@ -90,7 +90,7 @@ class RestClient
     {
         $result = new \stdClass();
         $result->http_response_code = "5.0.0";
-        $result->http_response_body = "Encodage error";
+        $result->http_response_bodytst = "Encodage error";
         return $result;
     }
     
