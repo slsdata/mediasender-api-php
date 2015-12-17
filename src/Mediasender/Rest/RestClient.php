@@ -41,7 +41,7 @@ class RestClient
                 $response = $this->_restClient->post($apiEndpoint, ['body' => $encodedDatas]);
                 return $this->_responseHandler($response);
             }else{
-                return $this->_errorEncodage();
+                return $this->_errorEncoding();
             }
         }catch(RequestException $e){
             return $this->_errorHandler($e);
@@ -86,7 +86,7 @@ class RestClient
         return $result;
     }
     
-    private function _errorEncodage()
+    private function _errorEncoding()
     {
         $result = new \stdClass();
         $result->http_response_code = 200;
