@@ -34,6 +34,16 @@ class RestClient
         ]);
     }
     
+    public function get($apiEndpoint, $getParams = array())
+    {
+        try {
+            $response = $this->_restClient->get($apiEndpoint, ['query' => $getParams]);
+            return $this->_responseHandler($response);
+        }catch(RequestException $e){
+            return $this->_errorHandler($e);
+        }
+    }
+    
     public function post($apiEndpoint, $postDatas = array())
     {
         try {
@@ -48,11 +58,15 @@ class RestClient
         }
     }
     
-    public function get($apiEndpoint, $getParams = array())
+    public function put($apiEndpoint, $putDatas = array())
     {
         try {
-            $response = $this->_restClient->get($apiEndpoint, ['query' => $getParams]);
-            return $this->_responseHandler($response);
+            if(($encodedDatas = $this->_encodePostDatas($putDatas)) !== false){
+                $response = $this->_restClient->put($apiEndpoint, ['body' => $encodedDatas]);
+                return $this->_responseHandler($response);
+            }else{
+                return $this->_errorEncoding();
+            }
         }catch(RequestException $e){
             return $this->_errorHandler($e);
         }
@@ -62,16 +76,6 @@ class RestClient
     {
         try {
             $response = $this->_restClient->delete($apiEndpoint);
-            return $this->_responseHandler($response);
-        }catch(RequestException $e){
-            return $this->_errorHandler($e);
-        }
-    }
-    
-    public function put($apiEndpoint, $putDatas = array())
-    {
-        try {
-            $response = $this->_restClient->put($apiEndpoint, ['body' => $this->_encodePostDatas($putDatas)]);
             return $this->_responseHandler($response);
         }catch(RequestException $e){
             return $this->_errorHandler($e);
