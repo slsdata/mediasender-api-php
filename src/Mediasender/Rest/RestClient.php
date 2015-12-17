@@ -119,14 +119,14 @@ class RestClient
         return $datas;
     }
     
-    private function _encodeUTF8($array)
+    private function _encodeUTF8($params)
     {
-        array_walk_recursive($array, function(&$item, $key){
+        array_walk_recursive($params, function(&$item, $key){
             if(!mb_detect_encoding($item, 'utf-8', true)){
                 $item = utf8_encode($item);
             }
         });
-        return $array;
+        return $params;
     }
     
     private function _array2xml($array)
