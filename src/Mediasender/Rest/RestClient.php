@@ -92,8 +92,8 @@ class RestClient
         $result->http_response_code = 200;
         $result->http_response_body = $this->_encodePostDatas(array(
             "status" => "failed",
-            "errorcode" => "5.0.0",
-            "message" => "Error encodage UTF-8"
+            "errorcode" => "1.5.0",
+            "message" => "Encoding error, every datas must be UTF-8"
         ));
         return $result;
     }
