@@ -110,10 +110,10 @@ class RestClient
         
         switch($this->_apiEnctype){
             case "json":
-                $datas = json_encode($datasEncoded);
+                $datas = json_encode($datas);
                 break;
             case "xml":
-                $datas = $this->_array2xml($datasEncoded);
+                $datas = $this->_array2xml($datas);
                 break;
         }
         return $datas;
