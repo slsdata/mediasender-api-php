@@ -106,7 +106,7 @@ class RestClient
     
     private function _encodePostDatas($datas)
     {
-        $datasEncoded = $this->_encodeUTF8($datas);
+        //$datasEncoded = $this->_encodeUTF8($datas);
         
         switch($this->_apiEnctype){
             case "json":
