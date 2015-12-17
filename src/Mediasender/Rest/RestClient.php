@@ -125,7 +125,7 @@ class RestClient
     {
         array_walk_recursive($datas, function(&$item){
             if(!mb_detect_encoding($item, 'UTF-8', true)){
-                $item = utf8_encode($item);
+                $item = "";
                 //$item = Encoding::fixUTF8($item);
             }
         });
