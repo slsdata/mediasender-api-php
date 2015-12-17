@@ -124,10 +124,7 @@ class RestClient
     private function _encodeUTF8($params)
     {
         array_walk_recursive($params, function(&$item, $key){
-            if(!mb_detect_encoding($item, 'utf-8', true)){
-                $item = Encoding::fixUTF8($item);
-                //$item = utf8_encode($item);
-            }
+            $item = Encoding::toUTF8($item);
         });
         return $params;
     }
