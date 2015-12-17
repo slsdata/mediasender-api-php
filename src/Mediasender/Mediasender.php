@@ -10,6 +10,7 @@ class Mediasender
     protected static $_apiURL = "api.media-sender.com";
     protected static $_apiVersion = "v1";
     protected static $_apiSSL = true;
+    protected static $_apiForceUTF8 = false;
     
     private $_apiEnctype = "json";
     private $_apiUser;
@@ -23,8 +24,9 @@ class Mediasender
         $apiURL = (isset($params["api_url"])) ? $params["api_url"] : self::$_apiURL;
         $apiVersion = (isset($params["api_version"])) ? $params["api_version"] : self::$_apiVersion;
         $apiSSL = (isset($params["api_ssl"])) ? $params["api_ssl"] : self::$_apiSSL;
+        $apiForceUTF8 = (isset($params["api_force_utf8"])) ? $params["api_force_utf8"] : self::$_apiForceUTF8;
         
-        $this->_restClient = new RestClient($this->_apiUser, $apiKey, $this->_generateFullURL($apiURL, $apiVersion, $apiSSL), $this->_apiEnctype);
+        $this->_restClient = new RestClient($this->_apiUser, $apiKey, $this->_generateFullURL($apiURL, $apiVersion, $apiSSL), $this->_apiEnctype, $apiForceUTF8);
     }
     
     /*******************************************************/

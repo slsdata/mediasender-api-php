@@ -14,9 +14,10 @@ Si vous n'utilisez pas encore **Composer**, voici comment l'installer simplement
 ```shell
 # Install Composer
 curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
 
 # Add Mediasender as a dependency
-php composer.phar require slsdata/mediasender-api-php:dev-master
+composer require slsdata/mediasender-api-php:dev-master
 ``` 
 
 Voici le lien direct pour [Packagist](https://packagist.org/packages/slsdata/mediasender-api-php).

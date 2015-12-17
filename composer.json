@@ -7,7 +7,8 @@
     "license": "MIT",
     "require": {
         "php": ">=5.3",
-        "guzzlehttp/guzzle": "~5.0"
+        "guzzlehttp/guzzle": "~5.0",
+        "neitanod/forceutf8": "dev-master"
     },
     "type": "library",
     "autoload": {
@@ -22,7 +23,7 @@
         }
     ],
     "support": {
-        "email": "tech@sls-data.com",
+        "email": "support@media-sender.com",
         "docs": "https://github.com/slsdata/mediasender-api-php"
     },
     "minimum-stability": "dev"

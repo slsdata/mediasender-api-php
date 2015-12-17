@@ -3,15 +3,18 @@ namespace Mediasender\Rest;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
+use ForceUTF8\Encoding;
 
 class RestClient
 {
     protected $_apiEnctype;
     protected $_restClient;
+    protected $_forceUTF8;
     
-    public function __construct($apiUser, $apiKey, $apiURL, $apiEnctype)
+    public function __construct($apiUser, $apiKey, $apiURL, $apiEnctype, $apiForceUTF8)
     {
         $this->_apiEnctype = $apiEnctype;
+        $this->_forceUTF8 = $apiForceUTF8;
         $this->_restClient = new Client([
             'base_url' => $apiURL,
             'defaults' => [
@@ -34,8 +37,12 @@ class RestClient
     public function post($apiEndpoint, $postDatas = array())
     {
         try {
-            $response = $this->_restClient->post($apiEndpoint, ['body' => $this->_encodePostDatas($postDatas)]);
-            return $this->_responseHandler($response);
+            if(($encodedDatas = $this->_encodePostDatas($postDatas)) !== false){
+                $response = $this->_restClient->post($apiEndpoint, ['body' => $encodedDatas]);
+                return $this->_responseHandler($response);
+            }else{
+                return $this->_errorEncodage();
+            }
         }catch(RequestException $e){
             return $this->_errorHandler($e);
         }
@@ -79,6 +86,14 @@ class RestClient
         return $result;
     }
     
+    private function _errorEncodage()
+    {
+        $result = new \stdClass();
+        $result->http_response_code = "5.0.0";
+        $result->http_response_body = "Encodage error";
+        return $result;
+    }
+    
     private function _errorHandler($exception)
     {
         $result = new \stdClass();
@@ -91,6 +106,10 @@ class RestClient
     
     private function _encodePostDatas($datas)
     {
+        if($this->_forceUTF8){
+            $datas = $this->_encodeUTF8($datas);
+        }
+        
         switch($this->_apiEnctype){
             case "json":
                 $datas = json_encode($datas);
@@ -99,6 +118,14 @@ class RestClient
                 $datas = $this->_array2xml($datas);
                 break;
         }
+        return $datas;
+    }
+    
+    private function _encodeUTF8($datas)
+    {
+        array_walk_recursive($datas, function(&$item){
+            $item = Encoding::fixUTF8($item);
+        });
         return $datas;
     }
     
